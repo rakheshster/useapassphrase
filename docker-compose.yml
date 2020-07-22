@@ -1,5 +1,0 @@
-nodebuild:
-  build: .
-  volumes:
-   - .:/code
-  command: grunt

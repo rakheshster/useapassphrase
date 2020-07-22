@@ -1,23 +1,9 @@
-# Use A Passphrase (.com)
+# README
 
-This site is intended to both generate simple passphrases as well as advocate
-for the use of random passphrases over human-generated passwords.
+This is based on [useapassphrase.com](https://www.useapassphrase.com) whose author has kindly made it available as open-source.
 
-# How to Contribute
+I removed the extra bits that weren't of use to me, and also made some changes to the code to better suit my frequent use cases.
 
-This site needs a lot of work. Please contribute to any of the following:
+# RUNNING THIS
 
-* To improving the persuasiveness of the argument, which is all contained in
-  `passphrase_advocate.md`.
-* To the wordlist from which the passwords are generated, which is contained in `js/wordlist.js`
-* Add additional password possibilities (e.g. four-word-with-space).
-
-# Running It Locally
-
-It requires grunt-cli (`npm install -g grunt-cli`), after which you can just
-run `npm install` and then `grunt`.
-
-If you have Docker & Docker Compose installed, you should theoretically just be
-able to run `docker-compose up` to build the /dist directory, which will create
-the index.html file that is entirely self-contained (i.e. it makes no external
-calls).
+Simply clone the repo or download a zip of it and extract to a folder. Serve that folder via any webserver. It doesn't need anything server side as this is simply a page with some Javascript to generate the passphrase and show it to you. 
