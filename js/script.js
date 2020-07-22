@@ -76,7 +76,6 @@ function calculateAndSetCrackTime() {
 // Global variables
 var selectField = document.getElementById('passphrase_select');
 var passwordField = document.getElementById('passphrase');
-var button = document.querySelector('.btn-generate');
 
 function mainFunction() {
   var numberOfWords = 3
@@ -118,8 +117,8 @@ function mainFunction() {
 passwordField.setAttribute('value', generatePassword(3,' '));
 calculateAndSetCrackTime();
 
-// Listen for a button click
-button.addEventListener('click', mainFunction);
+// Listen for a change in the dropdown selection and run mainFunction
+selectField.addEventListener('change', mainFunction)
 
 // Listen for password value change
 passwordField.addEventListener('input', function (evt) {
