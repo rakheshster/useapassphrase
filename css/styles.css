@@ -7,9 +7,8 @@ body {
   padding: 0;
 }
 h1 {
-  text-transform: uppercase;
   text-align: center;
-  font: 100 72px 'MH';
+  font: 100 62px 'MH';
   margin: 0 auto 20px auto;
 }
 h1 span {
@@ -17,12 +16,14 @@ h1 span {
 }
 input {
   display: block;
-  margin: 0 auto;
+  margin: 25px 0 25px 0;
   font-size: 40px;
   height: 60px;
-  width: 90%;
+  width: 100%;
   text-align: center;
+  font-size: 50px;
   padding: 1%;
+  border: 10px solid rgb(19, 33, 161);
 }
 select {
   font-size: 16px;
@@ -94,8 +95,8 @@ li {
   margin-top: 10px;
 }
 .passphrase-label {
-  margin: 0 auto 3px auto;
-  font-size: 75%;
+  margin: 5px auto 15px auto;
+  font-size: 90%;
   color: #888;
   text-align: center;
 }
@@ -105,42 +106,14 @@ li {
 }
 .crack-time-label {
   text-align: center;
-  margin: 0 auto;
+  margin: 5px auto;
   font-weight: 700;
   font-size: 72%;
 }
 .crack-time-label .crack-time {
   font-weight: 400;
 }
-.social-buttons {
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  margin: 50px 0;
-}
-.social-buttons svg {
-  vertical-align: middle;
-}
-.social-buttons a {
-  padding: 0 20px 0 20px;
-  text-decoration: none;
-  font-size: 85%;
-}
-.social-buttons .sc--facebook {
-  color: #3b5998;
-  fill: #3b5998;
-}
-.social-buttons .sc--twitter {
-  color: #55acee;
-  fill: #55acee;
-}
-.social-buttons .sc--github {
-  color: black;
-  fill: black;
-}
+
 code, .password {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 700;
@@ -148,12 +121,14 @@ code, .password {
 .footer {
   background-color: #eee;
   border-top: 1px solid #aaa;
-  font-size: 80%;
-  margin-top: 40px;
-  padding-left: 5%;
+  font-size: 70%;
+  padding-left: 0;
   padding-right: 5%;
-  padding-top: 30px;
-  padding-bottom: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .footer p {
   margin: 0;
