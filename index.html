@@ -18,22 +18,20 @@
   <p class="crack-time-label">Approximate Crack Time: <span class="crack-time">0 seconds</span></p>
   <div class="passphrase-options">
     <select id="passphrase_select">
-      <option value="3" selected>Three-word passphrase, with spaces</option>
-      <option value="4">Four-word passphrase, with spaces</option>
-      <option value="5">Five-word passphrase, with spaces</option>
-      <option value="12">Twelve-word passphrase, with spaces</option>
+      <option value="3s" selected>Three-word passphrase, with spaces</option>
+      <option value="3d">Three-word passphrase, with dashes</option>
+      <option value="4s">Four-word passphrase, with spaces</option>
+      <option value="4d">Four-word passphrase, with dashes</option>
+      <option value="5s">Five-word passphrase, with spaces</option>
+      <option value="5d">Five-word passphrase, with dashes</option>
     </select>
     <button class="btn-generate">Generate New Passphrase</button>
   </div>
 </div>
 <div class="footer">
   <div class="container">
-    <p><b>Credits:</b>
-    <p>Lock icon created by Milky. The password strength algorithm uses <a href="https://github.com/dropbox/zxcvbn">zxcvbn.js</a>, which was created by Dropboxer <a href="https://github.com/lowe">Dan Wheeler</a>.</p>
-    <p>Site created by <a href="http://www.twitter.com/mikehearn" target="_blank">@mikehearn.</a></p>
-    <p><b>Legal &amp; Tech:</b></p>
-    <p>The algorithm assumes 10,000 guesses per second, which is consistent with passwords hashed using bcrypt, scrypt or PBKDF2. If a database contains passwords hashed with MD5 or SHA-256/512, then no amount of password security is really going to help.</p>
-    <p>I assume no responsibility if you use a password from this site and subsequently are hacked.</div>
+    <p><b>Credits:</b> This is based on the passphrase generator at <a href="https://www.useapassphrase.com">https://www.useapassphrase.com</a> with some modifications.</p>
+  </div>
 </div>
 </div>
 <script src="js/zxcvbn.js?__inline=true"></script>

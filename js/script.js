@@ -6,12 +6,11 @@ function randomNumberBetweenZeroAndOne() {
   return crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295;
 }
 
-function generatePassword(numberOfWords) {
+function generatePassword(numberOfWords, wordSeparator) {
   numberOfWords = parseInt(numberOfWords);
 
   // Empty array to be filled with wordlist
   var generatedPasswordArray = [];
-
 
   // Grab a random word, push it to the password array
   for (var i = 0; i < numberOfWords; i++) {
@@ -19,7 +18,7 @@ function generatePassword(numberOfWords) {
       generatedPasswordArray.push(capitalizeFirstLetter(wordlist[index]));
   }
 
-  return generatedPasswordArray.join(' ');
+  return generatedPasswordArray.join(wordSeparator);
 }
 
 function capitalizeFirstLetter(string) {
@@ -71,21 +70,56 @@ function calculateAndSetCrackTime() {
   document.querySelector('.crack-time').innerHTML = readableCrackTime;
 }
 
+
+// Start of the main program
+
+// Global variables
 var selectField = document.getElementById('passphrase_select');
 var passwordField = document.getElementById('passphrase');
 var button = document.querySelector('.btn-generate');
 
-// Initially run it upon load
-passwordField.setAttribute('value', generatePassword(3));
+function mainFunction() {
+  var numberOfWords = 3
+  var wordSeparator = ' '
+
+  switch(selectField.options[selectField.selectedIndex].value) {
+    case "3s":
+      numberOfWords = 3;
+      wordSeparator = ' ';
+      break;
+    case "3d":
+      numberOfWords = 3;
+      wordSeparator = '-';
+      break;
+    case "4s":
+      numberOfWords = 4;
+      wordSeparator = ' ';
+      break;
+    case "4d":
+      numberOfWords = 4;
+      wordSeparator = '-';
+      break;
+    case "5s":
+      numberOfWords = 5;
+      wordSeparator = ' ';
+      break;
+    case "5d":
+      numberOfWords = 5;
+      wordSeparator = '-';
+      break;
+  }
+
+  passwordField.value = generatePassword(numberOfWords, wordSeparator);
+  setStyleFromWordNumber(passwordField, numberOfWords);
+  calculateAndSetCrackTime();
+}
+
+// Run upon load and generate a "Three-word passphrase, with spaces"
+passwordField.setAttribute('value', generatePassword(3,' '));
 calculateAndSetCrackTime();
 
 // Listen for a button click
-button.addEventListener('click', function() {
-  var numberOfWords = selectField.options[selectField.selectedIndex].value;
-  passwordField.value = generatePassword(numberOfWords);
-  setStyleFromWordNumber(passwordField, numberOfWords);
-  calculateAndSetCrackTime();
-});
+button.addEventListener('click', mainFunction);
 
 // Listen for password value change
 passwordField.addEventListener('input', function (evt) {
